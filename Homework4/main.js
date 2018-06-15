@@ -108,15 +108,18 @@ A[j1] = temp;
 console.log('MAX: ', max1, 'MIN: ', min1);
 console.log(A);
 
-//Task4
+//Task4 - FIXED
 
 A = [1, 5, 6, 2, 4];
 
 console.log('original: ', A);
 
-for (i = A.length - 1; i >= 0; i--){
-    console.log(A[i]);
+for (i = 0, j = A.length -1; i <= A.length/2 - 1; i++, j--){
+    temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
 }
+console.log('New A: ', A);
 
 //Task5
 
