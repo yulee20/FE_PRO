@@ -3,15 +3,15 @@
 function fillInArray (arr) {  
 var min = 1,
     max = 100;  
-    for (i = 0; i < arr.length; i++){
-        for (j = 0; j < arr[i].length; j++)
+    for (var i = 0; i < arr.length; i++){
+        for (var j = 0; j < arr[i].length; j++)
             arr[i][j] = Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
 
 function outputArray(arr) {
-    for (i = 0; i < arr.length; i++){
-        for (j = 0; j < arr[i].length; j++){
+    for (var i = 0; i < arr.length; i++){
+        for (var j = 0; j < arr[i].length; j++){
             document.write(arr[i][j] + ' ');
         }
         document.write("<br />");
@@ -35,12 +35,12 @@ function compareArrays (A, B){
     var sum1 = 0,
         sum2 = 0;
 
-    for (i = 0; i < A.length; i++){
+    for (var i = 0; i < A.length; i++){
         if (!isNaN(A[i])){
             sum1 += A[i];
         }
     }
-    for (i = 0; i < B.length; i++){
+    for (var i = 0; i < B.length; i++){
         if (!isNaN(B[i])){
             sum2 += B[i];
         }
