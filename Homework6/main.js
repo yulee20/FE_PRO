@@ -1,9 +1,5 @@
 //Task1
 
-function createArray(){
-
-}
-
 function fillInArray (arr) {  
 var min = 1,
     max = 100;  
@@ -22,7 +18,7 @@ function outputArray(arr) {
     }
 }
 
-var list = new Array(5)
+var list = new Array(5);
 for (var i = 0; i < list.length; i++){
     list[i] = new Array(5);
 }
