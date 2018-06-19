@@ -1,21 +1,19 @@
 //Task1
 
-var n = 5,
-    m = 5,
-    min = 1,
-    max = 100,
-    arr = new Array(n);
+function createArray(){
 
-function fillInArray () {    
+}
+
+function fillInArray (arr) {  
+var min = 1,
+    max = 100;  
     for (i = 0; i < arr.length; i++){
-        arr[i] = new Array(m);
-
         for (j = 0; j < arr[i].length; j++)
             arr[i][j] = Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
 
-function outputArray() {
+function outputArray(arr) {
     for (i = 0; i < arr.length; i++){
         for (j = 0; j < arr[i].length; j++){
             document.write(arr[i][j] + ' ');
@@ -24,8 +22,13 @@ function outputArray() {
     }
 }
 
-fillInArray();
-outputArray();
+var list = new Array(5)
+for (var i = 0; i < list.length; i++){
+    list[i] = new Array(5);
+}
+
+fillInArray(list);
+outputArray(list);
 
 //Task2
 
