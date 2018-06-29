@@ -51,42 +51,13 @@
 
 //Task4
 
-function getMax(args){
-
-    var list = new Array(args);
-
-    for (var i = 0; i < list.length; i++){
-        list[i] = new Array(args);
-    }
-
-    fillInArray(list);
-    outputArray(list);
-
+function getMax(){
     var arr = [];
-    for (var i = 0; i < args; i++){
-        arr.push(maxArr(list[i]));
+    for (var i = 0; i < arguments.length; i++){
+        arr.push(maxArr(arguments[i]));
     }
-    console.log('arr', arr);
     var str = arr.join(', ');
     console.log('str: ', str);
-}
-
-function fillInArray (arr) {  
-    var min = 1,
-        max = 100;  
-        for (var i = 0; i < arr.length; i++){
-            for (var j = 0; j < arr[i].length; j++)
-                arr[i][j] = Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-    }
-
-function outputArray(arr) {
-    for (var i = 0; i < arr.length; i++){
-        for (var j = 0; j < arr[i].length; j++){
-            document.write(arr[i][j] + ' ');
-        }
-        document.write("<br />");
-    }
 }
 
 function maxArr(arr){
@@ -96,8 +67,7 @@ function maxArr(arr){
             max = arr[i];
         }
     }
-    //console.log(max)
     return max;
 }
 
-getMax(5);
+getMax([3, 6, 8, 1], [5, 2, 4], [9, 10, 3], [7, 8, 2]);
