@@ -52,7 +52,7 @@ function Level3() {
 
 Level3.prototype = new Level2();
 
-Level3.prototype.reInit = function(newArr){    
+Level3.prototype.reInit = function (newArr){    
     this.setArr(newArr);
 }
 
@@ -81,30 +81,31 @@ calc.render();
 
 //Task2
 
-function superMath(){
-    this.obj = {
-        x: x,
-        y: y,
-        znak: function(){}
-    } 
-
-    this.check = function(object){
-        
-        test = confirm('Do you want to run it?' + object);
-        if (test) znak();
-            else {
-                this.input();
-            }
-    }
-
-    this.input = function(){
-        obj.x = +prompt('Input x: ');
-        obj.y = +prompt('Input y: ');
-        obj.znak = prompt('Input znak: ');
-    }
+function SuperMath(){
 }
 
-superMath.prototype.znak = function(x, y, operator){
+SuperMath.prototype.check = function(object){        
+    test = confirm('Do you want to run it?' + JSON.stringify(object));
+    if (test) console.log(this.znak(object.x, object.y, object.znak));
+        else {
+            var obj = this.input();
+            console.log(this.znak(obj.x, obj.y, obj.znak));
+        }
+}
+
+SuperMath.prototype.input = function(){
+    var obj = {};
+    obj.x = +prompt('Input x: ');
+    obj.y = +prompt('Input y: ');
+    obj.znak = prompt('Input znak: ');
+    temp = ['*', '/', '-', '+', '%'];
+    if(!temp.includes(obj.znak)){
+        return this.input();
+    }
+    return obj;
+}
+
+SuperMath.prototype.znak = function(x, y, operator){
     switch (operator){
         case '+': 
             return x + y;
@@ -130,17 +131,17 @@ superMath.prototype.znak = function(x, y, operator){
 }
 
 p = new SuperMath();
-obj = { X:12, Y:3, znak: '+'};
+obj = { x:2, y:3, znak: '+'};
 p.check(obj);
 
-// obj = { X:12, Y:3, znak: '/'};
-// p.check(obj);
+obj = { x:12, y:10, znak: '-'};
+p.check(obj);
 
-// obj = { X:12, Y:3, znak: '-'};
-// p.check(obj);
+obj = { x:12, y:3, znak: '/'};
+p.check(obj);
 
-// obj = { X:2, Y:3, znak: '*'};
-// p.check(obj);
+obj = { x:2, y:5, znak: '*'};
+p.check(obj);
 
-// obj = { X:12, Y:3, znak: '%'};
-// p.check(obj);
+obj = { x:12, y:5, znak: '%'};
+p.check(obj);
