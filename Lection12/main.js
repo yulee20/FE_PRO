@@ -82,24 +82,16 @@ SuperArray.prototype.setMarker = function(coordinate){
 
 SuperArray.prototype.goTo = function(coordinate){
     var arr = this.getArr();
-    
-    for (var i = 0; i < arr.length; i++){
-        for (var j = 0; j < arr[i].length; j++){
-            if(i == this.obj.x && j == this.obj.y){
-                arr[i][j] = this.obj.value;
-            }
-        }
+
+    if (this.obj.x && this.obj.y && this.obj.value){
+        arr[this.obj.x][this.obj.y] = this.obj.value;
     }
-    for (var i = 0; i < arr.length; i++){
-        for (var j = 0; j < arr[i].length; j++){
-            if(i == coordinate.x && j == coordinate.y){
-                this.obj = {x: i, y: j, value: arr[i][j]};    
-                arr[i][j] = '&';
-            }
-        }
-    }
+
+    this.obj = {x: coordinate.x , y: coordinate.y, value: arr[coordinate.x][coordinate.y]};
+    arr[coordinate.x][coordinate.y] = '&';
     
     console.log('Object: ', this.obj);
+    
     this.setArr(arr);
 }
 
@@ -170,12 +162,12 @@ list.render('_ ');
 // list.setMarker({x: 1, y: 2});
 // list.render('* ');
 
-// list.goTo({ x: 3, y: 4 });
-// list.render('-- ');
-// list.goTo({ x: 1, y: 1 });
-// list.render('** ');
-// list.goTo({ x: 2, y: 2 });
-// list.render('++ ');
+list.goTo({ x: 3, y: 4 });
+list.render('-- ');
+list.goTo({ x: 1, y: 1 });
+list.render('** ');
+list.goTo({ x: 2, y: 2 });
+list.render('++ ');
 
 // list.shift('left');
 // list.render('-- ');
@@ -188,11 +180,11 @@ list.render('_ ');
 // list.shift('top');
 // list.render('** ');
 
-list.goTo({ x: 3, y: 7 });
-list.render('-- ');
-list.shift('bottom');
-list.shift('bottom');
-list.render('++ ');
+// list.goTo({ x: 3, y: 7 });
+// list.render('-- ');
+// list.shift('bottom');
+// list.shift('bottom');
+// list.render('++ ');
 
 // list.goTo({ x: 0, y: 7 });
 // list.shift('right');

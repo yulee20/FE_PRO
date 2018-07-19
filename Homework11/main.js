@@ -52,8 +52,14 @@ function Level3() {
 
 Level3.prototype = new Level2();
 
-Level3.prototype.reInit = function (newArr){    
-    this.setArr(newArr);
+Level3.prototype.reInit = function (){    
+    var max = 50,
+        min = 0;
+    var arr = this.getArr();
+    for (var i = 0; i < arr.length; i++){
+        arr[i] =  Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    this.setArr(arr);
 }
 
 function Level4() {}
@@ -62,9 +68,9 @@ Level4.prototype = new Level3();
 
 var calc = new Level4();
 console.log(calc.getArr());
-calc.setArr([2, 6, 1, 3]);
-console.log(calc.getArr());
-calc.reInit([0, 3, 5, 9, 1, 7]);
+// calc.setArr([2, 6, 1, 3]);
+// console.log(calc.getArr());
+calc.reInit();
 console.log(calc.getArr());
 
 calc.render();
