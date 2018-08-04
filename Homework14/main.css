@@ -1,0 +1,41 @@
+.block {
+    width: 40px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 50px;
+    position: relative;
+}
+
+.red {
+    background: red;
+    width:40px;
+    height:0px;
+    position: absolute;
+    bottom: 10px;
+  }
+
+.green {
+    background: green;
+    width:40px;
+    height:0px;
+    position: absolute;
+    bottom: 0px;
+}
+
+#range {
+    margin: 0 40px;
+    border: 2px solid black;
+    width: 150px;
+}
+
+#number {
+    margin: 0 40px;
+    border: 1px solid black;
+    width: 150px;
+}
+
+.res {
+    width: 40px;
+    height: 20px;
+    border: 1px solid black;
+}
