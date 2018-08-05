@@ -1,0 +1,30 @@
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    border-top: 1px solid grey;
+  }
+  
+  .menu ul li {
+    background-color: lightblue; 
+    display: block;
+    border-bottom: 1px solid grey;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+  
+  .menu .submenu ul{
+    display: none;
+    margin: 0;
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .menu .submenu.open ul {
+    display: block;
+    float: right;
+  }
+  
