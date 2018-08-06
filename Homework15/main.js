@@ -23,24 +23,32 @@ window.onload = function(){
     function action(event){
         // console.log(event.keyCode);
         if(event.ctrlKey){
-            cntrlIsPressed = true;
             block.classList.toggle('changeSize');
+            cntrlIsPressed = true;
         }
-        if(cntrlIsPressed && event.ctrlKey){
+
+        if(cntrlIsPressed){
             switch(event.keyCode){
                 case 39:
+                    block.classList.remove('changeSize');
                     if (data.left + data.width + data.step <= window.innerWidth){
                         block.style.left = data.left + data.step + 'px';
                         data.left += data.step;
                     }  
                     break;
                 case 37:
+                    block.classList.remove('changeSize');
                     if (data.left - data.step >= 0){
                         block.style.left = data.left - data.step + 'px';
                         data.left -= data.step;
                     }   
                     break;
-                    }
+                case 38:
+                case 40:
+                case 32: 
+                    block.classList.remove('changeSize');
+                    return;
+            }
         }
 
         switch (event.keyCode){
@@ -75,20 +83,15 @@ window.onload = function(){
                 break;
             case 40:
                 if (data.top + data.height + data.step <= window.innerHeight){
-                    console.log('test');
                     block.style.top = data.top + data.step + 'px';
                     data.top += data.step;
                 }
                 break;
-            // case 17:
-            //     block.classList.toggle('changeSize');
-            //     break;
         }
     }
 
     function noAction(){
         cntrlIsPressed = false;
-        // block.classList.toggle('changeSize');
     }
 
     document.addEventListener('keydown', action);
