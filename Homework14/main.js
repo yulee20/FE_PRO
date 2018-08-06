@@ -1,5 +1,4 @@
 window.onload = function(){
-    var block = document.querySelector('.block');
     var range = document.querySelector('#range');
     var number = document.querySelector('#number');
     var red = document.querySelector('.red');
@@ -12,7 +11,6 @@ window.onload = function(){
         red.style.bottom = range.value + 'px';
         
         calculate();
-        showRes();
     }   
 
     number.oninput = function(){
@@ -21,30 +19,18 @@ window.onload = function(){
         red.style.bottom = range.value + 'px';
 
         calculate();
-        showRes();
     }
 
     function calculate(){
-        if (range.value == 0){
-            red.style.height = '0px';
-        }
-        if (range.value > 0 && range.value < 20){
-            red.style.height = '2px';         
-        }
-        if (range.value >= 20 && range.value < 50){
-            red.style.height = '4px';         
-        }
-        if (range.value >= 50 && range.value < 75){
-            red.style.height = '6px';         
-        }
-        if (range.value >= 75 && range.value <= 100){
-            red.style.height = '8px';         
-        }
-    }
+        var rangeValue = [20, 50, 75, 100];
+        var commValue = [2, 4, 6, 8];
 
-    function showRes(){
-        var result = parseInt(range.value) + parseInt(red.style.height);
-        res.innerHTML = result;
+        for (var i = 0; i < rangeValue.length; i++){
+            if (range.value <= rangeValue[i]){
+                var commNum = range.value * commValue[i] / 100;
+                red.style.height = commNum + 'px';
+            }
+        }
+        res.innerHTML = parseInt(range.value) + commNum;
     }
-
 }
