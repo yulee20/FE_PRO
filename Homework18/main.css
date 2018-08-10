@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}    
+
+.cart{
+    width: 200px;
+    height: 200px;
+    float: right;
+    border: 1px solid black;
+}
+
+.products {
+    float: left;
+    padding: 10px;
+}
