@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.person {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    left: 100px;
+    top: 200px;
+    position: absolute;
+}
+
+.changeSize{
+    transform: scale(1.15, 0.4);
+}
+
+.hide{
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    width: 150px;
+    padding: 5px;
+    border: 2px solid black;
+    display: none;
+}
+
+.menu__item {
+    border-bottom: 1px solid grey;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.menu__item:hover {
+    background-color: lightgrey;
+}
+
+.menu__item:last-child {
+    border-bottom: none;
+}
+
+.menu.show {
+    display: block;
+}
