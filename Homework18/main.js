@@ -41,23 +41,28 @@ window.onload = function(){
 
     updateData();
 
+    //add to cart
     for(var i = 0; i < add.length; i++){
-        add[i].addEventListener('click', function(){
-            // console.log(this);
-            // console.log(data);
-            
-            data[i].amount++;
-            cart.innerHTML = data[i].title + ': ' + data[i].amount; 
+        add[i].addEventListener('click', function(pos){
+            data[pos].amount++;
             saveData(data); 
-        })
-        
+            cart.innerHTML = '';
+            updateData(data);
+        }.bind(null, i))
     }
 
+    //remove from cart
     for(var i = 0; i < remove.length; i++){
-        remove[i].addEventListener('click', function(){
-            
-            // saveData(data);
-        })
+        remove[i].addEventListener('click', function(pos){
+            if (data[pos].amount != 0 ){
+                data[pos].amount--;
+                saveData(data);
+                cart.innerHTML = '';
+                updateData(data);
+            } else {
+                return;
+            }
+        }.bind(null, i))
     }
 
     function remove_All(){
@@ -73,7 +78,6 @@ window.onload = function(){
                     cart.innerHTML += newData[i].title + ': ' + newData[i].amount + '<br/>';
             }
         }
-        // return newData;
     }
     
     function saveData(value){
