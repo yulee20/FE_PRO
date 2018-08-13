@@ -29,12 +29,8 @@ window.onload = function(){
     ]
     
     var cart = document.querySelector('.cart');
-    var products = document.querySelectorAll('.products');
     var add = document.querySelectorAll('.add');
     var remove = document.querySelectorAll('.remove');
-    var product1 = document.querySelector('#product1');
-    var add1 = document.querySelector('#add1');
-    var remove1 = document.querySelector('#remove1');
     
     var removeAll = document.querySelector('#removeAll');
     removeAll.addEventListener('click', remove_All);
