@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    
+    <div class="task-manager">
+            <button v-on:click='moveR'>Move right</button>
+            <button v-on:click='moveL'>Move left</button>
+            
+        <ul>
+            <li v-for="item in listL"
+                v-on:click="remove(this.index, $event, this.list)">
+                {{ item }}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="item in main">
+                {{ item }}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="item in listR"
+                v-on:click="remove(this.index, $event, this.list)">
+                {{ item }}
+            </li>
+        </ul>
+        
+
+    </div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
