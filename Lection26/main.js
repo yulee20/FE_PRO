@@ -13,7 +13,7 @@ var taskManager = new Vue({
         moveL(){
             this.listL.push(this.main.pop());
         },
-        remove(pos, event, main){
+        remove(pos, event){
             event.target.remove();
             this.main.splice(pos, 1);
         }
