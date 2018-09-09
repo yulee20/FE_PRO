@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "table">
+        <table>
+           <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>X</th>
+                </tr>
+           </thead>
+           <tbody>
+                <tr v-for="(entry, index) in model">
+                    <td>
+                        <input v-model="entry.id" type="text" placeholder="Input ID"><!-- {{entry.title}} -->
+                    </td>
+                    <td>
+                        <input v-model="entry.title" type="text" placeholder="Input Title"><!-- {{entry.title}} -->
+                    </td>
+                    <td>
+                        <input v-model="entry.age" type="text" placeholder="Input Age"><!-- {{entry.age}} -->
+                    </td>
+                    <td>
+                        <input v-model="entry.address" type="text" placeholder="Input Address"><!-- {{entry.address}} -->
+                    </td>
+                    <td><button class="buttons" v-if="model.length != 0" v-on:click="deleteRow(index)" title="Delete row">-</button></td>
+                </tr>
+           </tbody>
+           <tfoot>
+               <tr>
+                   <td colspan="5" ><button class="buttons" v-on:click="addNewRow">+</button></td>
+               </tr>
+           </tfoot>
+        </table>
+
+    </div>
+    
+    <!-- <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title="message">
+              Наведи курсор на меня пару секунд,
+              чтобы увидеть динамически связанное значение title!
+        </span>
+    </div>
+
+    <div id="app-3">
+        <span v-if="seen">Сейчас меня видно</span>
+    </div>
+
+    <div id="app-4">
+            <ol>
+              <li v-for="todo in todos">
+                {{ todo.text }}
+              </li>
+            </ol>
+    </div>
+
+    <div id="app-5">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">Перевернуть сообщение</button>
+    </div>
+    
+    <div id="app-6">
+            <p>{{ message }}</p>
+            <input v-model="message">
+    </div> -->
+
+    <script src="./main.js"></script>
+</body>
+</html>

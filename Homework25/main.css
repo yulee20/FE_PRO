@@ -1,0 +1,18 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.buttons {
+    cursor: pointer;
+    width: 30px;
+    margin: 0 calc(50% - 15px);
+    text-align: center;
+}
