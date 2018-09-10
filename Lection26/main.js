@@ -6,6 +6,7 @@ var taskManager = new Vue({
         listR: [],
         count: 0
     },
+    
     methods: {
         moveR(){
             this.listR.push(this.main.pop());
