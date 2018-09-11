@@ -1,3 +1,7 @@
+Vue.component('modal', {
+    template: '#modal-template'
+  })
+
 var table = new Vue({
     el: '#table',
     data: {
@@ -8,7 +12,8 @@ var table = new Vue({
                 age: '12',
                 address: 'Kiev' 
             }
-        ]
+        ],
+        showModal: false
     },
     methods: {
         addNewRow() { 
