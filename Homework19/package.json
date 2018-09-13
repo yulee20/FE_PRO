@@ -1,0 +1,12 @@
+{
+  "name": "home19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node_static": "0.7.10"
+  }
+}
